@@ -25,7 +25,7 @@ Several files within this repositroy were generated from _anaysis.py_ and _analy
 
 The main scripting file is _analysis.py_ and has some light commenting. Further explaination is found within the Jupyter Notebook _analysis.ipynb_. The analysis remains the same within the two, aside from minor stylistic differences that does not affect the code. For example, the _analysis.py_ file contains _plt.show()_ command, but this is not necessary to include within the Jupyter Notebook as plots are rendered within the Jupyter Notebook. 
 
-- _.gitignore_ file 
+- _.gitignore_ file - a file containing a list of files that git should ignore 
 
 ## How to run the code
 The _analysis.py_ file contains the code for the project. Further discussion and commenting was completed through the Jupyter Notebook, _analysis.ipynb_. This _analysis.ipynb_ Jupyter Notebook can be run though a [Google CoLab](https://colab.google/) envionment from the below link. The badge was created using [Open in Colab](https://openincolab.com/). 
