@@ -66,7 +66,7 @@ plt.show()
 # Scatterplot using the Seaborn module function .pairplot() 
 sns.pairplot(iris_data, hue='species',kind='scatter'); 
 
-# Additional analysis 
+# Additional analysis (three items)
 # 1 Correlation values using the .corr() funtion mapped to a Seaborn heatmap. First a list of numerical 
 # values is created first 
 iris_num_data = iris_data[['sepal_length','sepal_width','petal_length','petal_width']]
