@@ -4,6 +4,7 @@ import numpy as np
 import seaborn as sns 
 import matplotlib.pyplot as plt
 import plotly.express as px
+import plotly
 import statsmodels
 
 # Importing the data and adding column names using a list
@@ -98,6 +99,8 @@ plt.show()
 fig = px.scatter(iris_data,x='sepal_length',y='sepal_width',trendline='ols',hover_data=iris_data,color='species')
 # plot will open in browser
 fig.show()
+# saving .HTML of figure for easy interactive viewing
+plotly.offline.plot(fig, filename='separate_slr.html')
 
 results = px.get_trendline_results(fig)
 
@@ -131,6 +134,9 @@ fig_overall = px.scatter(iris_data,x='sepal_length',y='sepal_width',trendline='o
                          hover_data=iris_data,color='species',trendline_scope='overall')
 # plot will open in browser
 fig_overall.show()
+
+# saving .HTML of figure for easy interactive viewing
+plotly.offline.plot(fig_overall, filename='overall_slr.html')
 
 results_overall = px.get_trendline_results(fig_overall)
 print(results_overall.px_fit_results.iloc[0].summary())
