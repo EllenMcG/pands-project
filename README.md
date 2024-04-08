@@ -38,7 +38,8 @@ The _analysis.py_ file contains the code for the project. Further discussion and
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-* The _analysis.ipynb_ Jupyter Notebook was also converted to _.html_ format as _analysis.html_ by running the below code in the directory.
+
+*The _analysis.ipynb_ Jupyter Notebook was also converted to _.html_ format as _analysis.html_ by running the below code in the directory.
 
 ```
 jupyter nbconvert --to html analysis.ipynb
