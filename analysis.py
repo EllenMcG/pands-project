@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import seaborn as sns 
 import matplotlib.pyplot as plt
+import plotly.express as px
+import statsmodels
 
 # Importing the data and adding column names using a list
 iris_data = pd.read_csv('iris.data')
@@ -86,3 +88,52 @@ print(iris_grouped)
 sns.boxplot(x="species", y="sepal_length", data=iris_data)
 # Adding plt.show() for analysis.py fil. Not needed for Jupyter Notebook as figures rendered within the notebook
 plt.show()
+
+# 4 Returning back to the correlation maxtix, sepal width had an r value of -0.12 with sepal length. This was a combined 
+# correlation matix in that all three species were combined so there looks to be a very weak negative correlation between 
+# these two variables. The plotly.express functationality can be imported to generate an interactive scatter plot with 
+# one line for each of the three species. This could be done by filtering out by species with the pandas module, 
+# but px.scatter can do this by setting the color argument to 'species'
+
+fig = px.scatter(iris_data,x='sepal_length',y='sepal_width',trendline='ols',hover_data=iris_data,color='species')
+# plot will open in browser
+fig.show()
+
+results = px.get_trendline_results(fig)
+
+# Iris setosa trendline as setosa is in iloc[0]
+print(results.px_fit_results.iloc[0].summary())
+
+# Generating the correlation coefficient from the Rsquared of the Iris setosa model by generating the square root of the 
+# Rsquared value 
+setosa_rsquared = np.sqrt(results.px_fit_results.iloc[0].rsquared)
+print(setosa_rsquared)
+
+# Irisvirginia trendline as virginica is in iloc[1]
+print(results.px_fit_results.iloc[1].summary())
+
+# Generating the correlation coefficient from the Rsquared of the Iris virginica model by generating the square root of the 
+# Rsquared value 
+virginica_rsquared = np.sqrt(results.px_fit_results.iloc[1].rsquared)
+print(virginica_rsquared)
+
+# Iris versicolor trendline as versicolor is in iloc[2]
+print(results.px_fit_results.iloc[2].summary())
+
+# Generating the correlation coefficient from the Rsquared of the Iris versicolor model by generating the square root of the 
+# Rsquared value 
+versicolor_rsquared = np.sqrt(results.px_fit_results.iloc[2].rsquared)
+print(versicolor_rsquared)
+
+# Setting the argument 'trendline_scope' to 'overall' from 'trace' in px.scatter so that all data is combined into 
+# one simple linear regression model 
+fig_overall = px.scatter(iris_data,x='sepal_length',y='sepal_width',trendline='ols',
+                         hover_data=iris_data,color='species',trendline_scope='overall')
+# plot will open in browser
+fig_overall.show()
+
+results_overall = px.get_trendline_results(fig_overall)
+print(results_overall.px_fit_results.iloc[0].summary())
+
+iris_overall_rsquared = np.sqrt(results_overall.px_fit_results.iloc[0].rsquared)
+print(iris_overall_rsquared)
