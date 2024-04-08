@@ -40,6 +40,6 @@ The _analysis.py_ file contains the code for the project. Further discussion and
 
 * The _analysis.ipynb_ Jupyter Notebook was also converted to _.html_ format as _analysis.html_ by running the below code in the directory.
 
-  ```
+```
 jupyter nbconvert --to html analysis.ipynb
 ```
