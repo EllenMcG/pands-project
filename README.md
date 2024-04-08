@@ -23,7 +23,7 @@ Several files within this repositroy were generated from _anaysis.py_ and _analy
 - _histogram_sepalwidth.png_ - .png file of histogram of sepal width
 - _summary.txt_ - a text file containing numerical descriptions of the four numerical variables (features) contained within the _Iris_ dataset
 
-The main scripting file is _analysis.py_ and has some light commenting. Further explaination is found within the Jupyter Notebook _analysis.ipynb_. The analysis remains the same within the two, aside from minor stylistic differences that does not affect the code. For example, the _analysis.py_ file contains _plt.show()_ command, but this is not necessary to include within the Jupyter Notebook as plots are rendered within the Jupyter Notebook. 
+The main scripting file is _analysis.py_ and has some light commenting. Further explaination is found within the Jupyter Notebook _analysis.ipynb_*. The analysis remains the same within the two, aside from minor stylistic differences that does not affect the code. For example, the _analysis.py_ file contains _plt.show()_ command, but this is not necessary to include within the Jupyter Notebook as plots are rendered within the Jupyter Notebook. 
 
 - _.gitignore_ file - a file containing a list of files that git should ignore
 
@@ -37,3 +37,9 @@ The _analysis.py_ file contains the code for the project. Further discussion and
 <a target="_blank" href="https://colab.research.google.com/github/EllenMcG/pands-project/blob/main/analysis.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
+
+* The _analysis.ipynb_ Jupyter Notebook was also converted to _.html_ format as _analysis.html_ by running the below code in the directory.
+
+  ```
+jupyter nbconvert --to html analysis.ipynb
+```
